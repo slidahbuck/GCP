@@ -7,7 +7,7 @@ import tensorflow as tf
 print("yes")
 
 # read data
-data = pd.read_csv("gs://big-dna/classifcation_and_seqs_aln.csv")
+data = pd.read_csv("gs://big-dna/all_classifcation_and_seqs_aln.csv")
 data = data.dropna() # drop na values
 
 # initialize
