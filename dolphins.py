@@ -4,6 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 import tensorflow as tf
 
+print("yes")
+
 # read data
 data = pd.read_csv("classifcation_and_seqs_aln.csv")
 data = data.dropna() # drop na values
