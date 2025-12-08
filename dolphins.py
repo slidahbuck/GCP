@@ -17,7 +17,7 @@ X = []
 # encode DNA sequences into numbers 
 encoder = LabelEncoder()
 encoder = encoder.fit(list(sequence[0]))
-for i in range(480): 
+for i in range(58699): 
     encoded = encoder.transform(list(sequence[i]))
     X.append(encoded)
 
