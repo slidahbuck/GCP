@@ -7,7 +7,7 @@ import tensorflow as tf
 print("yes")
 
 # read data
-data = pd.read_csv("gs://big-dna/all_classifcation_and_seqs_aln.csv")
+data = pd.read_csv("all_classifcation_and_seqs_aln.csv")
 data = data.dropna() # drop na values
 
 # initialize
@@ -41,9 +41,10 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Input(shape=(X.shape[1],)),
     tf.keras.layers.Dense(10, activation='relu'),
     tf.keras.layers.Dense(64, activation='relu'),
-    tf.keras.layers.Dense(34, activation='relu'),
+    tf.keras.layers.Dense(46, activation='relu'),
     tf.keras.layers.Dense(num_classes, activation='softmax'),
 ])
+
 # assign learning rate 
 lr = 0.0001
 
