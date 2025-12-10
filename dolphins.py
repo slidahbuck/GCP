@@ -39,8 +39,7 @@ num_classes = len(species_encoder.classes_)
 # build model 
 model = tf.keras.models.Sequential([
     tf.keras.layers.Input(shape=(X.shape[1],)),
-    tf.keras.layers.Dense(10, activation='relu'),
-    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dense(11, activation='relu'),
     tf.keras.layers.Dense(46, activation='relu'),
     tf.keras.layers.Dense(num_classes, activation='softmax'),
 ])
@@ -56,7 +55,7 @@ model.compile(
 )
 
 # train the model
-history = model.fit(X_train, y_train, epochs=500, validation_data=(X_test, y_test))
+history = model.fit(X_train, y_train, epochs=600, validation_data=(X_test, y_test))
 
 # plot graph 
 df = pd.DataFrame(history.history)
