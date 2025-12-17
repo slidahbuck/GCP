@@ -190,7 +190,7 @@ model.compile(
 
 # %%
 # Fit your model 
-history = model.fit(X_train, y_train, epochs=15, validation_data=(X_test, y_train))
+history = model.fit(X_train, y_train, epochs=15)
 
 # %% [markdown]
 # # Train your model on gcloud
