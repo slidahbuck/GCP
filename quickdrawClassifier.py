@@ -122,6 +122,8 @@ show_image(data_book)
 # define X by combining all loaded data from above
 X = np.vstack((data_book, data_airplane, data_angel, data_anvil, data_apple))
 
+X = X.reshape(-1, 28, 28, 1)
+
 # %%
 # verify the X was defined correctly
 assert X.shape[1] == 784
@@ -165,7 +167,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # %%
 # Define your model with the correct input shape and appropriate layers
 model = tf.keras.models.Sequential([
-    tf.keras.layers.Input(shape=(X.shape[1],)),
+    tf.keras.layers.Conv2D(32, (3,3), activation="relu"),
+    tf.keras.layers.MaxPooling2D(2,2),
+    tf.keras.layers.Flatten(),
     tf.keras.layers.Dense(8, activation='relu'),
     tf.keras.layers.Dense(46, activation='relu'),
     tf.keras.layers.Dense(5, activation='softmax'),
@@ -188,7 +192,7 @@ model.compile(
 
 # %%
 # Fit your model 
-history = model.fit(X_train, y_train, epochs=50)
+history = model.fit(X_train, y_train, epochs=15, validation_data=(X_test, y_train))
 
 # %% [markdown]
 # # Train your model on gcloud
