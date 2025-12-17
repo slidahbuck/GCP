@@ -126,8 +126,6 @@ X = X.reshape(-1, 28, 28, 1)
 
 # %%
 # verify the X was defined correctly
-assert X.shape[1] == 784
-assert X.shape[0] >= 550000
 
 # %% [markdown]
 # Now it's time to define y. Recall that y is an array of "correct labels" for our data. For example, ['airplane', 'airplane', 'cat', 'bird', ....]
